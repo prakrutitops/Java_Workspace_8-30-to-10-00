@@ -1,0 +1,60 @@
+Github
+
+1)drag and drop
+->file create
+->folder create
+->file upload
+
+
+2)git bash
+->https://git-scm.com/downloads
+->64-bit Git for Windows Setup.
+
+3)github desktop
+->https://desktop.github.com/download/
+
+Setup:
+
+JDK->Java Development Kit->Compiler
+
+
+JDK -> Java Development Kit ->Compiler
+JRE -> Java Runtime Environment->System Libarary
+JVM -> Java Virtual Machine
+
+1)JDK Download and install
+
+Java 8
+Java 11
+Java 17
+Java 19
+Java 21
+
+Download Java 19 and install
+
+PATH : C:\Program Files\Java\jdk-11.0.14\bin -> JDK Path
+
+Path Set:
+This Pc->right click ->properties ->advanced system settings ->environment variables
+-> new ->click on path ->paste your path ->click on OK
+
+-> Open your CMD
+
+1)type javac
+2)type java -version
+
+
+2)Eclipse:
+https://www.eclipse.org/downloads/
+
+
+
+
+
+
+
+
+
+
+
+

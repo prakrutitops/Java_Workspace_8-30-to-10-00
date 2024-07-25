@@ -1,0 +1,53 @@
+Access Specifier/Modifier:
+public
+private
+protected
+
+Class : first letter should be capital
+Java is a case sensitive Language
+
+int ->numeric
+float ->decimal[4 byte]
+char ->single character
+double->decimal[8 byte]
+String ->you can store anything-"fksfuiru7@@@"
+bool ->true,false
+long
+
+
+conditional statement:
+->you can check conditions here
+
+if,else if,else,nested if,switch,case,break
+
+1. if-else
+
+if(condition)
+{
+
+}
+else
+{
+
+}
+
+2.else if ->Multiple Condition
+
+3.Nested If
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

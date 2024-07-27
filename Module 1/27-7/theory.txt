@@ -1,0 +1,94 @@
+= ->assign the value
+== ->comapre the value
+
+
+Operators:
+1)Arithmetic Op
+2)Shorthand Op
+3)Relational Op
+
+a+=b//a=a+b
+a-=b//a=a-b
+
+Core Java -> desktop software->.exe
+Advance Java -> Websites->URL
+Framework ->Websites->URL
+1)for loop syntax:
+for(initialization;condition;incre/decre)
+{
+	source
+}
+
+2)while loop syntax:
+initialization;
+
+while(condition)
+{
+	source;
+	incre/decre;
+}
+
+
+for(i=1;i<=10;i++);
+{
+	System.out.println(i);
+}
+
+a)10
+b)compile time error
+c)1
+d)11
+
+input->tops
+output->tops4
+lan-> C
+condition->
+
+1)functions
+->inbuilt
+->user defined function
+2)Loop
+3)conditions
+4)pointer
+5)variable declare
+
+Entry Control Loop:
+1)for
+2)while
+
+Exit Control Loop:
+3)dowhile
+
+
+4532
+
+
+Userinput number
+4576
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

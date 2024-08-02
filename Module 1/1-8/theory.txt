@@ -1,0 +1,19 @@
+classname objname = new classname();
+
+ObjectEx o1 = new ObjectEx();
+Student s1 = new Student();
+
+Object Oriented Programming
+1)Object: Any Entity which has own state and behaviour
+
+Constructor: When Method Having a same name as a classname
+
+1)default
+2)parameterized
+3)copy
+
+->constructor does not have a return type
+
+static will fix the value
+static keyword will use same memory allocation
+static block will always executed before main method

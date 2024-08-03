@@ -1,0 +1,25 @@
+OOP -> Object Oriented Programming
+
+1)Object : Any entity which has own state and behvaiour
+ex:pen,paper,chair etc..
+
+2)Class : Collection of objects[data member]
+ex:human body
+
+3)Abstraction: Hiding internal details and showing functionalities
+ex:login page
+
+4)Encapsulation:Wrapping up of data or binding of data
+ex:capsule
+
+5)Inheritance:When one object acquire all the properties and behaviour of parent class
+parent -> child
+
+6)Polymorphism:Many ways to perform anything
+ex:road ways
+
+keyword
+this ->it'pass the refrence
+static ->variable,method,block
+
+Encapsulation:

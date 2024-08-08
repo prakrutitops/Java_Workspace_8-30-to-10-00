@@ -1,0 +1,22 @@
+keyword:
+super -> call parent class value
+final -> fix the value that will never be changed
+this  -> pass the refrence to variables
+static -> fix the value for same memory allocation [if you want you can change it]
+
+
+polymorphism-> Many ways to perform anything
+1)Method Overloading:when two or more methods having a same name but number of parameters should be diffrent
+
+2)Method Overriding:when two or more methods having a same name and number of parameters also same
+
+String ->Class
+
+StringBuilder
+StringBuffer
+
+How to Initialize the String
+
+immutable->String->can not change
+
+mutable->StringBuilder,StringBuffer

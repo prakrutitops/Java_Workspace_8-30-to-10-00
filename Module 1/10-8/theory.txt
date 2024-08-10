@@ -1,0 +1,36 @@
+Exception Handling - Error Handling
+
+keywords:
+try->logic
+catch->if any error will appear here from try then it's displayed here
+throw->Error throw
+throws->
+finally->will execute compulsory
+
+---------------------------------------------------------------------
+Abstract class will support abstract as well as non abstract methods
+Non Abstract class will support only non abstract methods
+---------------------------------------------------------------------
+
+
+FileOutputStream->write
+FileInputStream->read
+
+
+firstname
+lastname
+email
+password
+
+Your Firstname is : 
+Your Lastname is :
+Your Email is :
+Your Password is :
+
+-------------------------------------------------------------------
+Serialization & Deserialization:
+
+
+
+
+

@@ -1,0 +1,39 @@
+Thread:When you want to handle any process 
+
+handle ways:Inheritance
+1)class
+2)interface
+
+Thread Lifecycle
+1)init
+2)start
+3)run
+4)stop
+5)destroy
+
+inbuilt method - run
+@override -> 
+
+synchronous
+Asynchronous
+
+synchronization
+
+GUI
+
+Swing->J
+AWT->Abstract Windows Toolkit
+
+Wrapper class
+int
+Integer
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,59 @@
+Collection Framework:
+
+Collection -> 
+Java=> classes+interface+methods+blocks
+
+Interface:
+1)List:
+->ArrayList
+->LinkedList
+
+2)Set:
+->HashSet
+->LinkedHashSet
+
+3)Map:
+->HashMap
+
+Class:
+4)Vector
+
+5)Stack
+
+Generics Methods:
+compare
+comparTo
+
+
+Interface:
+1)Comparable
+2)Comparator
+
+
+
+add->add single element
+addAll->add whole list
+remove->remove single element either using index or object name
+removeAll->remove whole list
+retainAll->get common data from two lists
+
+
+
+-------------------------------------------------------------
+Create a Program for ArrayList using 
+
+Model which has a following data memebers 
+name,surname and email ,mobile,city
+
+Create two lists one list will accept name,surname and email 
+other list will accept mobile and city 
+
+merge both list using addAll Method and print the data
+
+
+
+
+
+
+
+

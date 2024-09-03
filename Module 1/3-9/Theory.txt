@@ -1,0 +1,81 @@
+left to right:
+*
+**
+***
+****
+*****
+
+1)row=5,col=5
+2)loop one for row
+3)loop one for col
+
+#
+##
+###
+####
+#####
+
+1
+22
+333
+4444
+55555
+
+1
+12
+123
+1234
+12345
+
+right to left:
+    *
+   **
+  ***
+ ****
+*****
+1)row=5,col=5
+2)loop one for row
+3)loop one for col
+4)loop for space 
+
+
+1
+23
+456
+78910
+
+A
+BB
+CCC
+DDDD
+EEEEE
+
+
+A
+AB
+ABC
+ABCD
+ABCDE
+
+I
+IN
+IND
+INDI
+INDIA
+
+
+55555
+4444
+333
+22
+1
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,68 @@
+Constraint Keys:
+
+Primary Key->data duplication avoid ->AI
+
+Unique Key-> Uniquely Identify data
+
+Foreign Key->pass refrence at the time of join
+
+Scalar Functions
+SELECT UCASE(name) FROM users; 
+SELECT LCASE(name) FROM users; 
+SELECT MID(NAME,1,4) FROM Students;
+SELECT LENGTH(NAME) FROM Stuents;
+SELECT ROUND(MARKS,0) FROM table_name;
+SELECT NAME, NOW() AS DateTime FROM Students;
+SELECT NAME,FORMAT(Now(),'YYYY-MM-DD') AS Date FROM Students; 
+
+Agreegate Functions
+
+Views:
+CREATE view myview as SELECT f_name FROM food
+
+Joins:
+1)INNER JOIN,JOIN
+2)LEFT JOIN
+3)RIGHT JOIN
+4)FULL JOIN
+SELECT * FROM city LEFT JOIN users on city.id=users.id
+UNION
+SELECT * FROM city RIGHT JOIN users on city.id=users.id
+
+Procedure:Functions May have a return type
+DELIMITER $$
+
+CREATE PROCEDURE myproc(INOUT myid int)
+
+BEGIN 
+
+	SELECT* FROM users WHERE id=myid;
+
+END$$
+
+DELIMITER ;
+
+
+Trigger
+
+INSERT,UPDATE,DELETE
+DELIMITER $$
+
+	CREATE TRIGGER mytrigger2 AFTER UPDATE ON subscribers FOR EACH ROW
+    
+    BEGIN
+    	
+        INSERT INTO audit_subscribers SET action_performed ='Updated a new subscriber',
+        subscriber_name = old.fname;
+        
+        
+    END $$
+
+DELIMITER ;
+
+
+
+
+
+
+

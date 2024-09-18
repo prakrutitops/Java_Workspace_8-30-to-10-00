@@ -1,0 +1,15 @@
+fieldset->division
+input->value get
+checkbox->select multiple
+radiobutton->select single
+placeholder->print data
+reset->reset value
+submit->send value
+
+
+CSS->Cascading Style Sheets
+
+1)inline css
+2)internal css
+3)external css
+

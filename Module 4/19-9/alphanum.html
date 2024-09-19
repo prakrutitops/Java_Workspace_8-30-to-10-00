@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+
+	function checkalphanum(elem,msg)
+	{
+		
+		var alphanumexp = /^[a-zA-Z0-9]+$/;
+		if(elem.value.match(alphanumexp))
+		{
+			return true;
+		}
+		else
+		{
+			alert(msg);	
+			elem.focus();
+			return false;
+			
+		}
+	}
+
+</script>
+</head>
+<body>
+
+
+<form>
+	<input type="text" name="alphanum" id="alphanum">
+	<input type="submit" value="Go" onclick="checkalphanum(document.getElementById('alphanum'),'Please Enter Characters and numbers Only')">
+</form>
+
+
+</body>
+</html>

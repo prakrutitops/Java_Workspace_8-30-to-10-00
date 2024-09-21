@@ -1,0 +1,7 @@
+Task:
+
+1)Integrate the Login Template and check if username is tops and password is 1234 then user can logged in succesfully otherwise
+it shows Error in error page add template for 404 not found 
+
+2)Create a one form which have a following fields name,email,mobile num and password add javascript validation for all.
+ 

@@ -5,7 +5,11 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Base64;
+import java.util.List;
 
+import com.model.ProductModel;
 import com.model.SignupModel;
 
 public class Dao 
@@ -98,4 +102,47 @@ public class Dao
 		return m2;
 	}
 	
+	public static List<ProductModel>viewproducts()
+	{
+		List<ProductModel>list = new ArrayList<>();
+		Connection con = Dao.getconnect();
+		
+		try 
+		{
+			PreparedStatement ps = con.prepareStatement("select * from products");
+			ResultSet set = ps.executeQuery();
+			
+			while(set.next())
+			{
+				
+				int id = set.getInt(1);
+				String pname = set.getString(2);
+				String pprice = set.getString(3);
+				String pdes = set.getString(4);
+				//String pimage = set.getString(5);
+				byte[] imgData = set.getBytes("p_image");
+				
+				ProductModel pm = new ProductModel();
+				pm.setId(id);
+				pm.setP_name(pname);
+				pm.setP_price(pprice);
+				pm.setP_des(pdes);
+				//pm.setP_image(pimage);
+
+				 // blob field 
+		         String encode = Base64.getEncoder().encodeToString(imgData);
+		         pm.setP_image(encode);
+				
+				
+				list.add(pm);
+			}
+		}
+		catch (Exception e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
 }

@@ -145,4 +145,43 @@ public class Dao
 		
 		return list;
 	}
+	
+	public static ProductModel getproductindexwise(int id)
+	{
+		ProductModel pm = null;
+		Connection con = Dao.getconnect();
+		
+		try 
+		{
+			PreparedStatement ps = con.prepareStatement("select * from products where id=?");
+			ps.setInt(1, id);
+			
+			ResultSet set = ps.executeQuery();
+			
+			if(set.next())
+			{
+				int id1 = set.getInt(1);
+				String pname = set.getString(2);
+				String pprice = set.getString(3);
+				String pdes = set.getString(4);
+				byte[] imgData = set.getBytes("p_image");
+				
+				pm = new ProductModel();
+				pm.setId(id1);
+				pm.setP_name(pname);
+				pm.setP_price(pprice);
+				pm.setP_des(pdes);
+				String encode = Base64.getEncoder().encodeToString(imgData);
+		        pm.setP_image(encode);
+			}
+			
+		}
+		catch (Exception e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return pm;
+	}
 }

@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 
+import com.model.CartModel;
 import com.model.ProductModel;
 import com.model.SignupModel;
 import com.model.WishlistModel;
@@ -228,5 +229,87 @@ public class Dao
 		}
 		
 		return list;
+	}
+	public static List<CartModel>cartbyemail(String email)
+	{
+		List<CartModel>list = new ArrayList<>();
+		Connection con = Dao.getconnect();
+		CartModel wm = null;
+		try 
+		{
+			PreparedStatement ps = con.prepareStatement("select * from cart where email=?");
+			ps.setString(1, email);
+			
+			ResultSet set = ps.executeQuery();
+			
+			while(set.next())
+			{
+				int id1 = set.getInt(1);
+				String pname = set.getString(2);
+				String pprice = set.getString(3);
+				String pdes = set.getString(4);
+				byte[] imgData = set.getBytes("p_image");
+				String email1 = set.getString(6);
+				
+				wm = new CartModel();
+				wm.setId(id1);
+				wm.setP_name(pname);
+				wm.setP_price(pprice);
+				wm.setP_des(pdes);
+				
+				String encode = Base64.getEncoder().encodeToString(imgData);
+				wm.setP_image(encode);
+				wm.setEmail(email1);
+				
+				list.add(wm);
+			}
+			
+		}
+		catch (Exception e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return list;
+	}
+	
+	public static WishlistModel getitemindexwise(int id)
+	{
+		WishlistModel pm = null;
+		Connection con = Dao.getconnect();
+		
+		try 
+		{
+			PreparedStatement ps = con.prepareStatement("select * from wishlist where id=?");
+			ps.setInt(1, id);
+			
+			ResultSet set = ps.executeQuery();
+			
+			if(set.next())
+			{
+				int id1 = set.getInt(1);
+				String pname = set.getString(2);
+				String pprice = set.getString(3);
+				String pdes = set.getString(4);
+				byte[] imgData = set.getBytes("p_image");
+				
+				pm = new WishlistModel();
+				pm.setId(id1);
+				pm.setP_name(pname);
+				pm.setP_price(pprice);
+				pm.setP_des(pdes);
+				String encode = Base64.getEncoder().encodeToString(imgData);
+		        pm.setP_image(encode);
+			}
+			
+		}
+		catch (Exception e) 
+		{
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return pm;
 	}
 }

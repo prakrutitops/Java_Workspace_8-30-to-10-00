@@ -1,3 +1,4 @@
+<%@page import="com.model.CartModel"%>
 <%@page import="com.model.WishlistModel"%>
 <%@page import="com.dao.Dao"%>
 <%@page import="com.model.ProductModel"%>
@@ -67,10 +68,10 @@
         // Your Java code to retrieve product data from the database goes here
         // For demonstration purposes, let's assume you have a list of Product objects
         
-        List<WishlistModel> list = Dao.wishlistbyemail(session.getAttribute("email").toString());// Method to retrieve product data from the database
+        List<CartModel> list = Dao.cartbyemail(session.getAttribute("email").toString());// Method to retrieve product data from the database
         
         // Iterate over the product list and generate HTML for each product
-         for (WishlistModel m : list) 
+         for (CartModel m : list) 
         {
         %>
         <div class="product">
@@ -79,10 +80,7 @@
             <p>Price: <%= m.getP_price() %></p>
             
             
-            	<form action="addtocart2.jsp">
-            		<input type="hidden" name="id" value="<%=m.getId()%>">
-            		<input type="submit" class="swd-button" value="Cart">
-            	</form>
+            	
             
             	
             

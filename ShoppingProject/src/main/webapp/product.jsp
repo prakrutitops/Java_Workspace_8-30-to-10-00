@@ -83,7 +83,8 @@
             		<input type="submit" class="swd-button" value="Wishlist">
             	</form>
             	
-            	<form>
+            	<form action="addtocart.jsp">
+            		<input type="hidden" name="id" value="<%=m.getId()%>">
             		<input type="submit" class="swd-button" value="Cart">
             	</form>
             

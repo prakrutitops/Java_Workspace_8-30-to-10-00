@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 
+import com.model.AdminModel;
 import com.model.CartModel;
 import com.model.ProductModel;
 import com.model.SignupModel;
@@ -312,4 +313,40 @@ public class Dao
 		
 		return pm;
 	}
+	 public static AdminModel adminlogin(AdminModel m) 
+	 { 
+		 AdminModel m2=null;
+	  
+		 Connection con = Dao.getconnect(); 
+		 try 
+		 {
+			 PreparedStatement ps = con.prepareStatement("select * from adminlogin where username=? and password=?");
+			 ps.setString(1,m.getUsername()); 
+			 ps.setString(2,m.getPassword());
+	  
+			 ResultSet set = ps.executeQuery();
+	  
+			 while(set.next()) 
+			 {
+				 int id = set.getInt(1); 
+				 String username =set.getString(2); 
+				 String password = set.getString(3);
+	  
+				 m2 = new AdminModel();
+	  
+				 m2.setId(id);
+				 m2.setUsername(username); 
+				 m2.setPassword(password);
+	  
+			 }
+			 }
+		 catch (Exception e)
+		 { // TODO Auto-generated catch block
+			 	e.printStackTrace(); 
+		}
+	  
+	  return m2;
+	  
+	  }
+	
 }

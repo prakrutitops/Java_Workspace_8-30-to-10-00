@@ -26,7 +26,8 @@ import javax.servlet.http.Part;
 
 @WebServlet("/WishlistSave")
 @MultipartConfig(maxFileSize=16177216)
-public class WishlistSave extends HttpServlet {
+public class WishlistSave extends HttpServlet 
+{
 	private static final long serialVersionUID = 1L;
        
    

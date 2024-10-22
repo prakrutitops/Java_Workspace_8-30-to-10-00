@@ -39,7 +39,12 @@
     %>
 
 
-
+	<%
+		if(session.getAttribute("webwingadmin")!=null)
+		{
+			
+		
+%>
 
   <div class="container-fluid">
     <div class="row">
@@ -81,6 +86,27 @@
       </div>
     </div>
   </div>
+  
+  <%
+		}
+		else
+		{
+	%>
+	
+	
+	<br>
+				<center>
+						
+						<b><p style="color:red;font-family: sans-serif; font-size: 25px;">Please Login First!!</p></b>
+					</center>
+
+					<br>
+					<br>
+				<%@ include file="adminlogin.jsp"%>
+	
+	<% 		
+		}
+  %>
 
   <!-- Bootstrap JS and dependencies -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
+
+
+
 <%
 	session.removeAttribute("webwingadmin");
 	session.invalidate();

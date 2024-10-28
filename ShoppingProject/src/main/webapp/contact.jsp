@@ -22,22 +22,22 @@
             </div>
             <div class="row">
                <div class="col-md-8 offset-md-2">
-                  <form id="post_form" class="contact_form" action="https://api.web3forms.com/submit" method="post">
+                  <form id="post_form" class="contact_form" action="contactinsert.jsp" method="post">
                      <div class="row">
                      	
                      	 <input type="hidden" name="access_key" value="e504b919-a5f1-4376-8c5e-37d805fe3431">
                      
                         <div class="col-md-12 ">
-                           <input class="contact_control" placeholder=" Name" type="type" name="Name" value="<%=session.getAttribute("name")%>"> 
+                           <input class="contact_control" placeholder=" Name" type="type" name="name" value="<%=session.getAttribute("name")%>"> 
                         </div>
                         <div class="col-md-12">
-                           <input class="contact_control" placeholder="Email" type="type" name="Email" value="<%=session.getAttribute("email")%>" readonly="readonly"> 
+                           <input class="contact_control" placeholder="Email" type="type" name="email" value="<%=session.getAttribute("email")%>" readonly="readonly"> 
                         </div>
                         <div class="col-md-12">
-                           <input class="contact_control" placeholder="Phone Number " type="type" name="Phone Number " value="<%=session.getAttribute("phone")%>">                          
+                           <input class="contact_control" placeholder="Phone Number " type="type" name="mobile" value="<%=session.getAttribute("phone")%>">                          
                         </div>
                         <div class="col-md-12">
-                           <input type="text" class="textarea" placeholder="Message" name="message"/>
+                           <input type="text" class="textarea" placeholder="Message" name="query"/>
                         </div>
                         <div class="col-md-12">
                            <button class="send_btn">Send</button>

@@ -11,6 +11,7 @@ import java.util.List;
 
 import com.model.AdminModel;
 import com.model.CartModel;
+import com.model.ContactModel;
 import com.model.ProductModel;
 import com.model.SignupModel;
 import com.model.WishlistModel;
@@ -348,5 +349,74 @@ public class Dao
 	  return m2;
 	  
 	  }
+	 
+	 public static int contactinsertdata(ContactModel cm)
+		{
+			int status = 0;
+			
+			Connection con = Dao.getconnect();
+			
+			
+			try 
+			{
+				PreparedStatement ps = con.prepareStatement("insert into contact(name,email,mobile,query) values (?,?,?,?)");
+				ps.setString(1,cm.getName());
+				ps.setString(2,cm.getEmail());
+				ps.setString(3,cm.getMobile());
+				ps.setString(4,cm.getQuery());
+				
+				status = ps.executeUpdate();
+			} 
+			catch (SQLException e)
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return status;
+		}
+	 
+	 public static List<ContactModel>viewquery()
+		{
+			List<ContactModel>list = new ArrayList<>();
+			Connection con = Dao.getconnect();
+			
+			try 
+			{
+				PreparedStatement ps = con.prepareStatement("select * from contact");
+				ResultSet set = ps.executeQuery();
+				
+				while(set.next())
+				{
+					
+					int id = set.getInt(1);
+					String name = set.getString(2);
+					String email = set.getString(3);
+					String mobile = set.getString(4);
+					String query = set.getString(5);
+					
+					ContactModel cm = new ContactModel();
+					cm.setId(id);
+					cm.setName(name);
+					cm.setEmail(email);
+					cm.setMobile(mobile);
+					cm.setQuery(query);
+					
+					
+					list.add(cm);
+				}
+			}
+			catch (Exception e) 
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return list;
+		}
+		
+	 
+	 
+	 
 	
 }

@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
@@ -394,6 +395,7 @@ public class Dao
 					String email = set.getString(3);
 					String mobile = set.getString(4);
 					String query = set.getString(5);
+					String status = set.getString(6);
 					
 					ContactModel cm = new ContactModel();
 					cm.setId(id);
@@ -401,7 +403,7 @@ public class Dao
 					cm.setEmail(email);
 					cm.setMobile(mobile);
 					cm.setQuery(query);
-					
+					cm.setStatus(status);
 					
 					list.add(cm);
 				}
@@ -415,7 +417,30 @@ public class Dao
 			return list;
 		}
 		
-	 
+	 	public static int changestatus(ContactModel m)
+	 	{
+	 		int status = 0;
+			
+			Connection con = Dao.getconnect();
+			
+			
+			try 
+			{
+				PreparedStatement ps = con.prepareStatement("update contact set status=? where id=?");
+				ps.setString(1,m.getStatus());
+				ps.setInt(2,m.getId());
+				
+				status = ps.executeUpdate();
+			} 
+			catch (SQLException e) 
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return status;
+			
+	 	}
 	 
 	 
 	

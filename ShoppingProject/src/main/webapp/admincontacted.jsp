@@ -95,6 +95,7 @@
 			<th>Email</th>
 			<th>Subject</th>
 			<th>Message</th>
+			<th>Status</th>
 			
          </thead>
          <tbody>
@@ -105,12 +106,94 @@
 			%>
 			<tr>
 				<td><%=m.getName() %></td><td><%=m.getEmail() %></td><td><%=m.getMobile() %></td><td><%=m.getQuery() %></td>
+				<td>
+					
+					<%=m.getStatus() %>
+				<form action="contactstatus.jsp">
+					<select name="status">
+						<option>Pending</option>
+						<option>Resolved</option>
+					</select>
+					<input type="hidden" name="id" value="<%=m.getId()%>">
+					<input type="submit" value="update">
+				
+				</form>
+				
+				</td>
+			
+				
+			<%-- 	
+				<form action="contactstatus.jsp">
+				
+					<td>
+					
+						
+						<%
+							String status=m.getStatus().toString();
+							if(status=="" && status.isEmpty())
+							{
+						%>		
+							 <select name="status">
+								<option>Pending</option>
+								<option>Resolved</option>
+							</select>	 
+						
+						<% 		
+							}
+							else
+							{
+						%>
+						
+							<select>
+								<option><%=m.getStatus() %></option>
+								
+								<%
+									if(m.getStatus()=="Pending")
+									{
+								%>
+								
+								<option>Resolved</option>		
+								<% 	
+									}
+									else if(m.getStatus()=="Resolved")
+									{
+								%>
+								
+								<option>Pending</option>			
+								<% 	
+									}
+								%>
+								
+								
+							</select>
+							
+						
+						
+						
+						<% 		
+							}
+						%>
+						
+						
+						
+				
+					<input type="hidden" name="id" value="<%=m.getId()%>">
+					<input type="submit" value="update">
+					</td>
+					
+				</form> --%>
+				
+				
+				
+				
 				<!-- <td><a href="queryedit.jsp">Edit</a></td> -->
 			</tr>	
 			
 			<%
 				}
+			
 			%>
+			
          </tbody>
       </table>
        	 

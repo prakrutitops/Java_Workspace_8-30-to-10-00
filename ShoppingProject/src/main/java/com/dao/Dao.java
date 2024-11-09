@@ -442,6 +442,43 @@ public class Dao
 			
 	 	}
 	 
-	 
+	 	public static CartModel getproductcartwise(int id)
+		{
+			CartModel cm = null;
+			Connection con = Dao.getconnect();
+			
+			try 
+			{
+				PreparedStatement ps = con.prepareStatement("select * from cart where id=?");
+				ps.setInt(1, id);
+				
+				ResultSet set = ps.executeQuery();
+				
+				if(set.next())
+				{
+					int id1 = set.getInt(1);
+					String pname = set.getString(2);
+					String pprice = set.getString(3);
+					String pdes = set.getString(4);
+					byte[] imgData = set.getBytes("p_image");
+					
+					cm = new CartModel();
+					cm.setId(id1);
+					cm.setP_name(pname);
+					cm.setP_price(pprice);
+					cm.setP_des(pdes);
+					String encode = Base64.getEncoder().encodeToString(imgData);
+			        cm.setP_image(encode);
+				}
+				
+			}
+			catch (Exception e) 
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return cm;
+		}
 	
 }

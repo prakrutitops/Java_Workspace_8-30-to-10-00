@@ -13,6 +13,7 @@ import java.util.List;
 import com.model.AdminModel;
 import com.model.CartModel;
 import com.model.ContactModel;
+import com.model.PaymentModel;
 import com.model.ProductModel;
 import com.model.SignupModel;
 import com.model.WishlistModel;
@@ -479,6 +480,52 @@ public class Dao
 			}
 			
 			return cm;
+		}
+	 	
+	 	public static List<PaymentModel>viewplacedorder()
+		{
+			List<PaymentModel>list = new ArrayList<>();
+			Connection con = Dao.getconnect();
+			
+			try 
+			{
+				PreparedStatement ps = con.prepareStatement("select * from placedorder");
+				ResultSet set = ps.executeQuery();
+				
+				while(set.next())
+				{
+					
+					int id = set.getInt(1);
+					int pid = set.getInt(2);
+					String pname = set.getString(3);
+					String pprice = set.getString(4);
+					String pdes = set.getString(5);
+					//String pimage = set.getString(5);
+					byte[] imgData = set.getBytes("p_image");
+					
+					PaymentModel pm = new PaymentModel();
+					pm.setId(id);
+					pm.setP_id(pid);
+					pm.setP_name(pname);
+					pm.setP_price(pprice);
+					pm.setP_des(pdes);
+					//pm.setP_image(pimage);
+
+					 // blob field 
+			         String encode = Base64.getEncoder().encodeToString(imgData);
+			         pm.setP_image(encode);
+					
+					
+					list.add(pm);
+				}
+			}
+			catch (Exception e) 
+			{
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			return list;
 		}
 	
 }

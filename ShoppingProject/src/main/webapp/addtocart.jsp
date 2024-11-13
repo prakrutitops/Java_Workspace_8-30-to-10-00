@@ -18,7 +18,10 @@
 			System.out.print(id2);
 			ProductModel m = Dao.getproductindexwise(id2);
 			
-			
+			String number = request.getParameter("number");
+			int number2 = Integer.parseInt(number);
+			System.out.print(number);
+			int price = Integer.parseInt(m.getP_price()); 
 			
 	%>
 		
@@ -28,7 +31,21 @@
 			<h2><%=m.getP_name() %></h2>
 			<h3><%=m.getP_price() %></h3>
 			<h3><%=m.getP_des() %></h3>
+			<h3>Quantity : <%= number2 %></h3>
 			<img src="data:image/jpeg;base64,<%=m.getP_image()%>" width="350px" height="300px" />
+			
+	<b><p>Final Price: </p></b>
+	<%= count(number2,price) %>
+	<%
+		int finalprice = count(number2, price);
+	%>
+	
+	<%!
+		int count(int num,int price)
+		{
+			return num*price;
+		}
+	%>     
 	
 	
 	<form action="CartSave" method="post" enctype="multipart/form-data" class="requires-validation" novalidate>
@@ -56,6 +73,14 @@
                             
                              <div class="col-md-12">
                                <input class="form-control" type="hidden" name="email" placeholder="Product Price" value="<%=session.getAttribute("email") %>" required>
+                            </div>
+                            
+                             <div class="col-md-12">
+                               <input class="form-control" type="hidden" name="price" placeholder="Price" value="<%=finalprice %>" readonly="readonly">
+                            </div>
+                            
+                               <div class="col-md-12">
+                               <input class="form-control" type="hidden" name="p_qua" placeholder="Quantity" value="<%=number2 %>" readonly="readonly">
                             </div>
                             
                             

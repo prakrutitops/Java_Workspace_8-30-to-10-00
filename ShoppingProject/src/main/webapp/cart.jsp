@@ -78,6 +78,8 @@
            <img src="data:image/jpeg;base64,<%=m.getP_image()%>" width="150px" height="200px" />
             <h3><%= m.getP_name() %></h3>
             <p>Price: <%= m.getP_price() %></p>
+            <p>Quantity: <%= m.getP_qua() %></p>
+            <p>Final Price: <%= m.getFp() %></p>
             <form action="payment.jsp">
             		<input type="hidden" name="id" value="<%=m.getId()%>">
             		<input type="submit" class="swd-button" value="Proceed to Payment">

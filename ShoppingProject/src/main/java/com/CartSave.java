@@ -55,6 +55,10 @@ public class CartSave extends HttpServlet {
 		String description = request.getParameter("p_des");
 		String image = request.getParameter("p_image");
 		String email = request.getParameter("email");
+		String fp1 = request.getParameter("price");
+		String qua = request.getParameter("p_qua");
+		
+		int fp = Integer.parseInt(fp1); 
 		
 		String base64ImageData = image.split(",")[1];
 		 byte[] imageData = Base64.getDecoder().decode(base64ImageData);
@@ -75,7 +79,7 @@ public class CartSave extends HttpServlet {
 			Class.forName("com.mysql.jdbc.Driver");
 				con = DriverManager.getConnection(usl, user, pass);
 				
-				PreparedStatement ps = con.prepareStatement("insert into cart(p_name,p_price,p_des,p_image,email) values(?,?,?,?,?)");
+				PreparedStatement ps = con.prepareStatement("insert into cart(p_name,p_price,p_des,p_image,p_qua,fp,email) values(?,?,?,?,?,?,?)");
 				
 				//InputStream io = new ByteArrayInputStream(image.getBytes(StandardCharsets.UTF_8));
 
@@ -85,8 +89,9 @@ public class CartSave extends HttpServlet {
 				ps.setString(2, price);				
 				ps.setString(3, description);
 				ps.setBlob(4,io);
-				ps.setString(5,email);
-				//ps.setInt(6,id4);
+				ps.setString(5, qua);
+				ps.setInt(6,fp);
+				ps.setString(7,email);
 				
 				r = ps.executeUpdate();
 			

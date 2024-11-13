@@ -39,6 +39,40 @@
 			}
         
     </style>
+    
+     <script type="text/javascript">
+
+    function decreaseQuantity(element) {
+        var input = element.nextElementSibling;
+        var value = parseInt(input.value, 10);
+        if (value > 0) {
+            input.value = value - 1;
+        }
+    }
+
+    // Function to increase quantity
+    function increaseQuantity(element) {
+        var input = element.previousElementSibling;
+        var value = parseInt(input.value, 10);
+        input.value = value + 1;
+    }
+
+    // Function to get final quantity
+    function getFinalQuantity() {
+        var products = document.getElementsByClassName('product');
+        var totalQuantity = 0;
+        
+        for (var i = 0; i < products.length; i++) {
+            var quantityInput = products[i].querySelector('.quantity-input');
+            var quantity = parseInt(quantityInput.value, 10);
+            totalQuantity += quantity;
+        }
+        
+        console.log('Final Quantity:', totalQuantity);
+        // You can use `totalQuantity` variable for further processing
+    }
+    </script>
+    
 </head>
 <body>
 
@@ -83,10 +117,16 @@
             		<input type="submit" class="swd-button" value="Wishlist">
             	</form>
             	
-            	<form action="addtocart.jsp">
-            		<input type="hidden" name="id" value="<%=m.getId()%>">
-            		<input type="submit" class="swd-button" value="Cart">
-            	</form>
+           <form action="addtocart.jsp">
+	          <div class="quantity">
+	            <div onclick="decreaseQuantity(this)">-</div>
+	            <input type="text" name ="number" value="1" width="50px;" readonly="readonly"/>
+	            <div onclick="increaseQuantity(this)">+</div>
+        	</div>
+      		
+            	<input type="hidden" name="id" value="<%=m.getId()%>">
+            	<input type="submit" class="swd-button" value="Cart">
+          </form>
             
             	
             

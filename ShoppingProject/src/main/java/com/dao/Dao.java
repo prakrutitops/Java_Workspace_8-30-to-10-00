@@ -253,13 +253,20 @@ public class Dao
 				String pprice = set.getString(3);
 				String pdes = set.getString(4);
 				byte[] imgData = set.getBytes("p_image");
-				String email1 = set.getString(6);
+				String qua = set.getString(6);
+				String fp = set.getString(7);
+				String email1 = set.getString(8);
+				
+				int fp2 = Integer.parseInt(fp);
 				
 				wm = new CartModel();
 				wm.setId(id1);
 				wm.setP_name(pname);
 				wm.setP_price(pprice);
 				wm.setP_des(pdes);
+				wm.setP_qua(qua);
+				wm.setFp(fp2);
+				//wm.setEmail(email);
 				
 				String encode = Base64.getEncoder().encodeToString(imgData);
 				wm.setP_image(encode);

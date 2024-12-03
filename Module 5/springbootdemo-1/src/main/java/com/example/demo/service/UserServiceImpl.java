@@ -21,6 +21,25 @@ public class UserServiceImpl implements UserService {
 		repo.save(u);
 	}
 
+	@Override
+	public List<User> viewAllUser() {
+		// TODO Auto-generated method stub
+		return repo.findAll();
+	}
+
+	@Override
+	public void deleteUser(int id) {
+		
+		repo.deleteById(id);
+		
+	}
+
+	@Override
+	public User userById(int id) {
+		// TODO Auto-generated method stub
+		return repo.findById(id).orElseThrow();
+	}
+
 	
 
 }
